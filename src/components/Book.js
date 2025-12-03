@@ -1,15 +1,13 @@
 import { useState } from "react";
 import Button from "./Button";
 
-////////////////////////////////////////////////////////
-
 export default function Book({ book, onSellBook, onDeleteBook, onSelectBook }) {
   const [pop, setPop] = useState(false);
   const handleSell = () => {
     if (Number(book.quantity) > 0) {
       onSellBook(book.id);
       setPop(true);
-      setTimeout(() => setPop(false), 200); // remove pop after 1s
+      setTimeout(() => setPop(false), 200); // remove pop
     }
   };
   return (

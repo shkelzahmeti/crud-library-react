@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Button from "./Button";
 
-////////////////////////////////////////////////////////
 export default function LibraryForm({
   onSubmitForm,
   selectedBook,
@@ -51,10 +50,10 @@ export default function LibraryForm({
       // number: generate based on number
       book.imageURL = `https://covers.openlibrary.org/b/id/${inputImg}-M.jpg`;
     } else if (isValidUrl(inputImg)) {
-      // valid URL: allow it unchanged
+      // valid URL:
       book.imageURL = inputImg;
     } else {
-      // invalid URL: show error
+      // invalid URL:
       errors.imageURL = "Please enter a number or a valid URL";
     }
     return errors;
@@ -69,17 +68,10 @@ export default function LibraryForm({
     e.preventDefault();
     const errors = validateBook(newBook);
     setErrors(errors);
-    // Only submit if errors
+    // Only submit if no errors
     if (Object.keys(errors).length === 0) {
       onSubmitForm(newBook);
-      setNewBook({
-        title: "",
-        author: "",
-        description: "",
-        pages: "",
-        quantity: "",
-        imageURL: "",
-      });
+      setNewBook(emptyBook);
     }
   };
   return (
