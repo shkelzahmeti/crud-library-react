@@ -24,7 +24,7 @@ export default function LibraryManager({ data }) {
         )
       );
       setSelectedBook(null);
-      showPopup(`${newBook.title} has been edited`, "update");
+      showPopup(`${newBook.title} has been updated`, "update");
     } else {
       setBooks((books) => [...books, { ...newBook, id: uuidv4() }]);
       showPopup(`${newBook.title} has been added to the list`, "add");
