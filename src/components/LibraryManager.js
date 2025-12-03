@@ -72,6 +72,7 @@ export default function LibraryManager({ data }) {
       <LibraryForm
         onSubmitForm={handleSubmitForm}
         selectedBook={selectedBook}
+        onSelectBook={handleSelectBook}
       />
       <BooksList
         books={books}

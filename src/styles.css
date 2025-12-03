@@ -59,7 +59,7 @@ body {
   resize: vertical;
 }
 
-.library-form button[type="submit"] {
+.library-form button {
   padding: 10px 20px;
   background-color: #ff9900;
   color: #fff;
@@ -70,7 +70,12 @@ body {
   transition: background 0.3s;
 }
 
-.library-form button[type="submit"]:hover {
+.library-form button:nth-of-type(2) {
+  margin-left: 10px; /* space from first button */
+  background-color: #d9534f;
+}
+
+.library-form button:hover {
   background-color: #e68a00;
 }
 

@@ -2,7 +2,11 @@ import { useState, useEffect } from "react";
 import Button from "./Button";
 
 ////////////////////////////////////////////////////////
-export default function LibraryForm({ onSubmitForm, selectedBook }) {
+export default function LibraryForm({
+  onSubmitForm,
+  selectedBook,
+  onSelectBook,
+}) {
   const emptyBook = {
     title: "",
     author: "",
@@ -151,6 +155,9 @@ export default function LibraryForm({ onSubmitForm, selectedBook }) {
           {" "}
           {selectedBook ? "Update Book" : "Register Book"}
         </Button>
+        {selectedBook ? (
+          <Button onClick={() => onSelectBook(null)}>Discard</Button>
+        ) : null}
       </form>
     </div>
   );
